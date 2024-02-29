@@ -1,0 +1,6 @@
+[submodule "CommonUtility"]
+	path = CommonUtility
+	url = git@github.com:ckkwing/CommonUtility.git
+[submodule "WPFLib"]
+	path = WPFLib
+	url = git@github.com:ckkwing/WPFLib.git
