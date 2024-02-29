@@ -24,5 +24,10 @@ namespace Deom.Windows.WPF
         {
             InitializeComponent();
         }
+
+        private void btnShare_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

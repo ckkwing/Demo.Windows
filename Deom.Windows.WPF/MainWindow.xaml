@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Deom.Windows.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <UniformGrid>
+        <Button x:Name="btnShare" Content="Share" Click="btnShare_Click" />
+    </UniformGrid>
 </Window>
