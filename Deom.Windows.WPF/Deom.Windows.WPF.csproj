@@ -100,10 +100,19 @@
       <Project>{7b0fdb7b-ea66-4a8c-bb9f-e11e4e00a0e2}</Project>
       <Name>CommonUtility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CommonUtility\WindowsRTBridge\WindowsRTBridge.csproj">
+      <Project>{c6e2ec64-563c-4945-bd9e-96df1119127c}</Project>
+      <Name>WindowsRTBridge</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WPFLib\Theme\Theme.csproj">
       <Project>{c1629aac-21c0-46c4-a15b-daec15542c57}</Project>
       <Name>Theme</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.22621.2428</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
