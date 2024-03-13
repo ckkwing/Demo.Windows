@@ -1,2 +1,2 @@
-# Deom.Windows
+# Demo.Windows
 A demo project for windows scope, include WPF, UWP etc.
