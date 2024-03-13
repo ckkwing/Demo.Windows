@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="466926d0-fca8-4295-912c-c04ce724bee9" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Deom.Windows.UWP</DisplayName>
+    <DisplayName>Demo.Windows.UWP</DisplayName>
     <PublisherDisplayName>NERO</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Deom.Windows.UWP.App">
+      EntryPoint="Demo.Windows.UWP.App">
       <uap:VisualElements
-        DisplayName="Deom.Windows.UWP"
+        DisplayName="Demo.Windows.UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Deom.Windows.UWP"
+        Description="Demo.Windows.UWP"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

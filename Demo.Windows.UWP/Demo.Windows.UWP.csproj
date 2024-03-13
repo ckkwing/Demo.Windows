@@ -7,8 +7,8 @@
     <ProjectGuid>{7FF74487-80D7-4C3A-A356-C0E76F8C666E}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Deom.Windows.UWP</RootNamespace>
-    <AssemblyName>Deom.Windows.UWP</AssemblyName>
+    <RootNamespace>Demo.Windows.UWP</RootNamespace>
+    <AssemblyName>Demo.Windows.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>

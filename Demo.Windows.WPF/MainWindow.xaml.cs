@@ -18,7 +18,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
 using WindowsRTBridge.Share;
 
-namespace Deom.Windows.WPF
+namespace Demo.Windows.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
