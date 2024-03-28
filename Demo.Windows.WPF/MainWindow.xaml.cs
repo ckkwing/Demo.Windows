@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Theme.CustomControl;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
 using WindowsRTBridge.Share;
@@ -23,7 +24,7 @@ namespace Demo.Windows.WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : BaseWindow
     {
         public enum ShareMode
         {
@@ -102,6 +103,9 @@ namespace Demo.Windows.WPF
             ShowShareUI();
         }
 
+        private void btnUri_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
