@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         Loaded="Window_Loaded" Background="{DynamicResource BRUSH_BLACK}" ResizeMode="CanResizeWithGrip">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -15,7 +16,8 @@
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0">
             <Button x:Name="btnShare" Content="Share" Click="btnShare_Click" />
-            <Button x:Name="btnUri" Content="Uri panel" Click="btnUri_Click" />
+            <Button x:Name="btnLoadingAnimation" Content="Loading Animation" Click="btnLoadingAnimation_Click"/>
+            <Button x:Name="btnCurrencyTest" Content="Currentcy code test" Click="btnCurrencyTest_Click" />
         </WrapPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Background="Red">
             <TextBlock  Text="Bottom" />

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Demo.Windows.WPF
 {
     /// <summary>
-    /// Interaction logic for UriTestWindow.xaml
+    /// Interaction logic for LoadingAnimationWindow.xaml
     /// </summary>
-    public partial class UriTestWindow : Window
+    public partial class LoadingAnimationWindow : Window
     {
-        public UriTestWindow()
+        public LoadingAnimationWindow()
         {
             InitializeComponent();
         }

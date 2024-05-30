@@ -1,0 +1,19 @@
+﻿<Window x:Class="Demo.Windows.WPF.LoadingAnimationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo.Windows.WPF"
+        mc:Ignorable="d"
+        xmlns:loadingControls="clr-namespace:Theme.CustomControl.Loading;assembly=Theme"
+        Title="LoadingAnimationWindow" Height="450" Width="800"
+        Background="{DynamicResource BRUSH_BLACK}">
+    <Window.Resources>
+    </Window.Resources>
+    <StackPanel>
+        <!--<Image Source="{DynamicResource IMG_INDICATOR_STATIC}" Stretch="None" />-->
+        <loadingControls:CircleImageLoading Source="{DynamicResource IMG_INDICATOR_STATIC}" />
+        <loadingControls:CircleImageLoading Source="{DynamicResource IMG_INDICATOR_STATIC}" Stretch="UniformToFill" Width="20" Height="20" />
+        <loadingControls:CircleImageLoading Source="{DynamicResource IMG_INDICATOR_STATIC}" Duration="0:0:10" />
+    </StackPanel>
+</Window>

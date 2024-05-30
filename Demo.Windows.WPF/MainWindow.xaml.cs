@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CommonUtility;
+using CommonUtility.Helper;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,9 +106,32 @@ namespace Demo.Windows.WPF
             ShowShareUI();
         }
 
-        private void btnUri_Click(object sender, RoutedEventArgs e)
+        private void btnLoadingAnimation_Click(object sender, RoutedEventArgs e)
         {
+            LoadingAnimationWindow animationWindow = new LoadingAnimationWindow();
+            animationWindow.ShowDialog();
+        }
 
+        private void btnCurrencyTest_Click(object sender, RoutedEventArgs e)
+        {
+            string machineCurrentLocation = Utility.WindowsSystem.GetMachineCurrentLocation();
+
+            var currentRegionInfo = RegionInfo.CurrentRegion;
+
+            decimal price;
+            string iso4217CurrencyCode = "USD";
+            CultureInfo cultureInfo = CurrencyHelper.GetCultureInfoCollection(iso4217CurrencyCode).FirstOrDefault() ?? CultureInfo.CurrentCulture; //new CultureInfo("fr-FR");
+            //NumberFormatInfo.CurrentInfo is equal to cultureInfo
+            if (CurrencyHelper.TryParseCurrency("$45.00", cultureInfo, out price))
+            {
+                string symbol = string.Empty;
+                CurrencyHelper.TryGetCurrencySymbol(iso4217CurrencyCode, out symbol);
+                MessageBox.Show($"Price: {CurrencyHelper.ToCurrency(price, cultureInfo)}, Symbol: {symbol}");
+            }
+            else
+            {
+                MessageBox.Show("Converter failed");
+            }
         }
     }
 }
