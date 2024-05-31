@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Demo.Windows.WPF"
         mc:Ignorable="d"
         xmlns:loadingControls="clr-namespace:Theme.CustomControl.Loading;assembly=Theme"
+        xmlns:customControls="clr-namespace:Theme.CustomControl;assembly=Theme"
         Title="LoadingAnimationWindow" Height="450" Width="800"
         Background="{DynamicResource BRUSH_BLACK}">
     <Window.Resources>
@@ -15,5 +16,10 @@
         <loadingControls:CircleImageLoading Source="{DynamicResource IMG_INDICATOR_STATIC}" />
         <loadingControls:CircleImageLoading Source="{DynamicResource IMG_INDICATOR_STATIC}" Stretch="UniformToFill" Width="20" Height="20" />
         <loadingControls:CircleImageLoading Source="{DynamicResource IMG_INDICATOR_STATIC}" Duration="0:0:10" />
+        <customControls:ImageAnim Source="{DynamicResource IMG_STRING_GIF_ANIMATION}">
+            <customControls:ImageAnim.RenderTransform>
+                <ScaleTransform x:Name="myScaleTransform" ScaleX="0.5" ScaleY="0.5"/>
+            </customControls:ImageAnim.RenderTransform>
+        </customControls:ImageAnim>
     </StackPanel>
 </Window>

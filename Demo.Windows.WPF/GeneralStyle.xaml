@@ -3,7 +3,8 @@
                     xmlns:Img="clr-namespace:System.Windows.Media.Imaging;assembly=PresentationCore"
                     xmlns:mscorlib="clr-namespace:System;assembly=mscorlib">
     <mscorlib:String x:Key="IMG_STRING_DEMO_LOADING" >pack://application:,,,/Demo.Windows.WPF;Component/Resources/Images/Indicator_small.jpg</mscorlib:String>
-    
+    <mscorlib:String x:Key="IMG_STRING_GIF_ANIMATION" >pack://application:,,,/Demo.Windows.WPF;Component/Resources/Images/animation.gif</mscorlib:String>
+
     <Img:BitmapImage x:Key="IMG_DEMO_LOADING" UriSource="pack://application:,,,/Demo.Windows.WPF;Component/Resources/Images/Indicator_small.jpg" />
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">

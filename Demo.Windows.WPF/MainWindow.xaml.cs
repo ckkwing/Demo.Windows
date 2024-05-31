@@ -49,6 +49,8 @@ namespace Demo.Windows.WPF
             IntPtr hwnd = new WindowInteropHelper(Application.Current.MainWindow).Handle;
             var dtm = DataTransferManagerHelper.GetForWindow(hwnd);
             dtm.DataRequested += OnDataRequested;
+
+            CommonUtility.Logger.LogHelper.DefaultLogger.Debug("Window_Loaded");
         }
 
         async void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs args)
