@@ -1,0 +1,19 @@
+﻿<Window x:Class="Demo.Windows.WPF.ImageTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo.Windows.WPF"
+        mc:Ignorable="d" Background="{DynamicResource BRUSH_BLACK}"
+        Title="ImageTestWindow" Height="450" Width="800">
+    <StackPanel>
+        <Button x:Name="btnSelectPhoto" Content="Select a Photo" Click="btnSelectPhoto_Click" />
+        <Button x:Name="btnImageFormatConverterToJpeg" Content="Convert to Jpeg" Click="btnImageFormatConverterToJpeg_Click" />
+        <Button x:Name="btnImageFormatConverterToHeic" Content="Convert to Heic" Click="btnImageFormatConverterToHeic_Click" />
+        <StackPanel>
+            <RadioButton x:Name="rdbConvertedSource" Content="Use converted image" />
+            <Button x:Name="btnLossyCompression" Content="Lossy compression" Click="btnLossyCompression_Click" />
+        </StackPanel>
+
+    </StackPanel>
+</Window>

@@ -135,5 +135,11 @@ namespace Demo.Windows.WPF
                 MessageBox.Show("Converter failed");
             }
         }
+
+        private void btnImageTest_Click(object sender, RoutedEventArgs e)
+        {
+            ImageTestWindow imageTestWindow = new ImageTestWindow();
+            imageTestWindow.ShowDialog();
+        }
     }
 }
