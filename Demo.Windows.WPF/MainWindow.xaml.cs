@@ -1,5 +1,5 @@
-﻿using CommonUtility;
-using CommonUtility.Helper;
+﻿using CommonUtility.Helper;
+using CommonUtility.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -140,6 +140,26 @@ namespace Demo.Windows.WPF
         {
             ImageTestWindow imageTestWindow = new ImageTestWindow();
             imageTestWindow.ShowDialog();
+        }
+
+        private void btnStartNetworkAdapterWatcher_Click(object sender, RoutedEventArgs e)
+        {
+            NetworkHelper.StartNetworkAdapterWatcher();
+        }
+
+        private void btnStopNetworkAdapterWatcher_Click(object sender, RoutedEventArgs e)
+        {
+            NetworkHelper.StopNetworkAdapterWatcher();
+        }
+
+        private void btnStartMonitoringNetworkChanges_Click(object sender, RoutedEventArgs e)
+        {
+            NetworkHelper.StartMonitoringNetworkChanges();
+        }
+
+        private void btnStopMonitoringNetworkChanges_Click(object sender, RoutedEventArgs e)
+        {
+            NetworkHelper.StopMonitoringNetworkChanges();
         }
     }
 }

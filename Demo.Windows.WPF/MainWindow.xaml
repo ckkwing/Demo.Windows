@@ -19,6 +19,10 @@
             <Button x:Name="btnLoadingAnimation" Content="Loading Animation" Click="btnLoadingAnimation_Click"/>
             <Button x:Name="btnCurrencyTest" Content="Currentcy code test" Click="btnCurrencyTest_Click" />
             <Button x:Name="btnImageTest" Content="Image Test" Click="btnImageTest_Click" />
+            <Button x:Name="btnStartNetworkAdapterWatcher" Content="StartNetworkAdapterWatcher" Click="btnStartNetworkAdapterWatcher_Click"  />
+            <Button x:Name="btnStopNetworkAdapterWatcher" Content="StopNetworkAdapterWatcher" Click="btnStopNetworkAdapterWatcher_Click" />
+            <Button x:Name="btnStartMonitoringNetworkChanges" Content="StartMonitoringNetworkChanges" Click="btnStartMonitoringNetworkChanges_Click" />
+            <Button x:Name="btnStopMonitoringNetworkChanges" Content="StopMonitoringNetworkChanges" Click="btnStopMonitoringNetworkChanges_Click" />
         </WrapPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Background="Red">
             <TextBlock  Text="Bottom" />
