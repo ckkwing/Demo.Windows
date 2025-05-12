@@ -23,6 +23,12 @@
             <Button x:Name="btnStopNetworkAdapterWatcher" Content="StopNetworkAdapterWatcher" Click="btnStopNetworkAdapterWatcher_Click" />
             <Button x:Name="btnStartMonitoringNetworkChanges" Content="StartMonitoringNetworkChanges" Click="btnStartMonitoringNetworkChanges_Click" />
             <Button x:Name="btnStopMonitoringNetworkChanges" Content="StopMonitoringNetworkChanges" Click="btnStopMonitoringNetworkChanges_Click" />
+            <Button x:Name="btnScrollViewerTest" Content="ScrollViewer Test" Click="btnScrollViewerTest_Click" />
+            <Button x:Name="btnSHA256Test" Content="SHA256 Test" Click="btnSHA256Test_Click" />
+            <customControl:AlphaNumericPasswordBoxWithToggle Style="{DynamicResource CommonPasswordBoxWithToggleStyle}"
+                                   WaterText="Water text"
+                                   Password="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   Width="250" Height="32" Margin="0,8,0,24"/>
         </WrapPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Background="Red">
             <TextBlock  Text="Bottom" />

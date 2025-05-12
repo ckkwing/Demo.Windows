@@ -1,7 +1,9 @@
-﻿using CommonUtility.Helper;
+﻿using CommonUtility.Encryption;
+using CommonUtility.Helper;
 using CommonUtility.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -27,7 +29,7 @@ namespace Demo.Windows.WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : ChromeBaseWindow
+    public partial class MainWindow : ChromeBaseWindow, INotifyPropertyChanged
     {
         public enum ShareMode
         {
@@ -38,6 +40,16 @@ namespace Demo.Windows.WPF
         }
 
         ShareMode currentShareMode = ShareMode.Blank;
+        private string _password = string.Empty;
+        public string Password
+        {
+            get => _password;
+            set
+            {
+                _password = value;
+                OnPropertyChanged(nameof(Password));
+            }
+        }
 
         public MainWindow()
         {
@@ -161,5 +173,37 @@ namespace Demo.Windows.WPF
         {
             NetworkHelper.StopMonitoringNetworkChanges();
         }
+
+        private void btnScrollViewerTest_Click(object sender, RoutedEventArgs e)
+        {
+            ScrollViewerTestWindow scrollViewerTestWindow = new ScrollViewerTestWindow();
+            scrollViewerTestWindow.ShowDialog();
+        }
+
+        private void btnSHA256Test_Click(object sender, RoutedEventArgs e)
+        {
+            string password = "asdfsadfasdf!21312";
+            var salt = SHA256Helper.GenerateSalt();
+            string saltedHash = SHA256Helper.ComputeSaltedHash(password, salt);
+            MessageBox.Show($"password:{password} is {SHA256Helper.VerifyPassword(password, saltedHash,salt)}");
+            password += "asfasdf";
+            MessageBox.Show($"password:{password} is {SHA256Helper.VerifyPassword(password, saltedHash, salt)}");
+        }
+
+
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(params string[] properties)
+        {
+            PropertyChangedEventHandler propertyChanged = PropertyChanged;
+            if (propertyChanged != null)
+            {
+                foreach (string property in properties)
+                {
+                    propertyChanged(this, new PropertyChangedEventArgs(property));
+                }
+            }
+        }
+        #endregion
     }
 }
