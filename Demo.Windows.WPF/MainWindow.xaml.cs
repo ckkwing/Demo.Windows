@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,26 @@ using Theme.CustomControl;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
 using WindowsRTBridge.Share;
+
+namespace Demo.Test1
+{
+    [DataContract(Namespace = "http://schemas.example.com")]
+    public class AAA
+    {
+        [DataMember]
+        public string Name { get; set; }
+    }
+}
+
+namespace Demo.Test2
+{
+    [DataContract(Namespace = "http://schemas.example.com")]
+    public class AAA
+    {
+        [DataMember]
+        public string Name { get; set; }
+    }
+}
 
 namespace Demo.Windows.WPF
 {
@@ -56,6 +77,8 @@ namespace Demo.Windows.WPF
             InitializeComponent();
         }
 
+
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             IntPtr hwnd = new WindowInteropHelper(Application.Current.MainWindow).Handle;
@@ -63,6 +86,18 @@ namespace Demo.Windows.WPF
             dtm.DataRequested += OnDataRequested;
 
             CommonUtility.Logger.LogHelper.DefaultLogger.Debug("Window_Loaded");
+
+            //Test
+            try
+            {
+                string fileName = @"E:\Temp\1.test";
+                EncryptionHelper.SerializeObjectToFile(fileName, typeof(Test1.AAA), null, new Test1.AAA() { Name = "ckk" }, "NeroAG20230721~!", "@#20230721NeroAG");
+                var a1 = EncryptionHelper.DeserializeObjectFromFile(fileName, typeof(Test1.AAA), null, "NeroAG20230721~!", "@#20230721NeroAG") as Test1.AAA;
+                var a2 = EncryptionHelper.DeserializeObjectFromFile(fileName, typeof(Test2.AAA), null, "NeroAG20230721~!", "@#20230721NeroAG") as Test2.AAA;
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         async void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs args)
@@ -185,9 +220,9 @@ namespace Demo.Windows.WPF
             string password = "asdfsadfasdf!21312";
             var salt = SHA256Helper.GenerateSalt();
             string saltedHash = SHA256Helper.ComputeSaltedHash(password, salt);
-            MessageBox.Show($"password:{password} is {SHA256Helper.VerifyPassword(password, saltedHash,salt)}");
+            MessageBox.Show($"password:{password} is {SHA256Helper.VerifyContent(password, saltedHash,salt)}");
             password += "asfasdf";
-            MessageBox.Show($"password:{password} is {SHA256Helper.VerifyPassword(password, saltedHash, salt)}");
+            MessageBox.Show($"password:{password} is {SHA256Helper.VerifyContent(password, saltedHash, salt)}");
         }
 
 

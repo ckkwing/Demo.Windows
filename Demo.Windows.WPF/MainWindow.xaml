@@ -7,10 +7,11 @@
         xmlns:customControl="clr-namespace:Theme.CustomControl;assembly=Theme"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Loaded="Window_Loaded" Background="{DynamicResource BRUSH_BLACK}" ResizeMode="CanResizeWithGrip">
+        Loaded="Window_Loaded" Background="#FF1F1F1F"  ResizeMode="CanResizeWithGrip">
     
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -25,12 +26,18 @@
             <Button x:Name="btnStopMonitoringNetworkChanges" Content="StopMonitoringNetworkChanges" Click="btnStopMonitoringNetworkChanges_Click" />
             <Button x:Name="btnScrollViewerTest" Content="ScrollViewer Test" Click="btnScrollViewerTest_Click" />
             <Button x:Name="btnSHA256Test" Content="SHA256 Test" Click="btnSHA256Test_Click" />
+
+
+        </WrapPanel>
+        <StackPanel Grid.Row="1">
+            <Border BorderThickness="2" BorderBrush="White" Height="1" />
             <customControl:AlphaNumericPasswordBoxWithToggle Style="{DynamicResource CommonPasswordBoxWithToggleStyle}"
                                    WaterText="Water text"
                                    Password="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                    Width="250" Height="32" Margin="0,8,0,24"/>
-        </WrapPanel>
-        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Background="Red">
+            <customControl:NumericUpDown Height="32" Width="54" MinValue="0" MaxValue="100" Increment="1" Value="3" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom" Background="Red">
             <TextBlock  Text="Bottom" />
         </StackPanel>
 
