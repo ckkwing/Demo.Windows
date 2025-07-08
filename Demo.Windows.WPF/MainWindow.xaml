@@ -5,10 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo.Windows.WPF"
         xmlns:customControl="clr-namespace:Theme.CustomControl;assembly=Theme"
-        mc:Ignorable="d"
+        mc:Ignorable="d" FunctionBar="{DynamicResource FunctionBarControl}"
         Title="MainWindow" Height="450" Width="800"
         Loaded="Window_Loaded" Background="#FF1F1F1F"  ResizeMode="CanResizeWithGrip">
-    
+    <customControl:ChromeBaseWindow.Resources>
+        <ContentControl x:Key="FunctionBarControl">
+            <Menu>
+                <MenuItem Header="Menu1" />
+                <MenuItem Header="Menu2" />
+                <MenuItem Header="Menu3" />
+            </Menu>
+        </ContentControl>
+    </customControl:ChromeBaseWindow.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -26,8 +34,7 @@
             <Button x:Name="btnStopMonitoringNetworkChanges" Content="StopMonitoringNetworkChanges" Click="btnStopMonitoringNetworkChanges_Click" />
             <Button x:Name="btnScrollViewerTest" Content="ScrollViewer Test" Click="btnScrollViewerTest_Click" />
             <Button x:Name="btnSHA256Test" Content="SHA256 Test" Click="btnSHA256Test_Click" />
-
-
+            <Button x:Name="btnPathTest" Content="Path Test" Click="btnPathTest_Click" />
         </WrapPanel>
         <StackPanel Grid.Row="1">
             <Border BorderThickness="2" BorderBrush="White" Height="1" />

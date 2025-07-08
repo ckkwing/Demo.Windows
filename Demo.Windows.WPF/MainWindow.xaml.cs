@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -75,9 +76,8 @@ namespace Demo.Windows.WPF
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
         }
-
-
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -225,6 +225,11 @@ namespace Demo.Windows.WPF
             MessageBox.Show($"password:{password} is {SHA256Helper.VerifyContent(password, saltedHash, salt)}");
         }
 
+        private void btnPathTest_Click(object sender, RoutedEventArgs e)
+        {
+            PathTestWindows pathTestWindows = new PathTestWindows();
+            pathTestWindows.ShowDialog();
+        }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -239,6 +244,9 @@ namespace Demo.Windows.WPF
                 }
             }
         }
+
         #endregion
+
+
     }
 }
