@@ -22,6 +22,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Theme.CustomControl;
+using Theme.Helper;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
 using WindowsRTBridge.Share;
@@ -231,6 +232,20 @@ namespace Demo.Windows.WPF
             pathTestWindows.ShowDialog();
         }
 
+        private void btnDPITest_Click(object sender, RoutedEventArgs e)
+        {
+            double pixels = DpiHelper.DipToPixels(this.ActualWidth, this);
+            double dip = DpiHelper.PixelsToDip(pixels, this);
+
+            Size pixelsSize = DpiHelper.DipToPixels(new Size(this.ActualWidth, this.ActualHeight), this);
+            MessageBox.Show($"Pixels size of this window are width:{pixelsSize.Width}, height:{pixelsSize.Height}");
+
+            Size dipSize = new Size(1100, 650);
+            pixelsSize = DpiHelper.DipToPixels(dipSize, this);
+            MessageBox.Show($"Dip size:{dipSize.Width} * {dipSize.Height}, Pixels size:{pixelsSize.Width} * {pixelsSize.Height}");
+            dipSize = DpiHelper.PixelsToDip(pixelsSize, this);
+        }
+
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(params string[] properties)
@@ -244,6 +259,7 @@ namespace Demo.Windows.WPF
                 }
             }
         }
+
 
         #endregion
 

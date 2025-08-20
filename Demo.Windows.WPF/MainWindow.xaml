@@ -35,14 +35,18 @@
             <Button x:Name="btnScrollViewerTest" Content="ScrollViewer Test" Click="btnScrollViewerTest_Click" />
             <Button x:Name="btnSHA256Test" Content="SHA256 Test" Click="btnSHA256Test_Click" />
             <Button x:Name="btnPathTest" Content="Path Test" Click="btnPathTest_Click" />
+            <Button x:Name="btnDPITest" Content="DPI Test" Click="btnDPITest_Click" />
         </WrapPanel>
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Margin="0,20,0,0">
             <Border BorderThickness="2" BorderBrush="White" Height="1" />
-            <customControl:AlphaNumericPasswordBoxWithToggle Style="{DynamicResource CommonPasswordBoxWithToggleStyle}"
+            <StackPanel Orientation="Horizontal">
+                <Button Content="HyperlinkButtonStyle" Style="{DynamicResource HyperlinkButtonStyle}" />
+                <customControl:AlphaNumericPasswordBoxWithToggle Style="{DynamicResource CommonPasswordBoxWithToggleStyle}"
                                    WaterText="Water text"
                                    Password="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                    Width="250" Height="32" Margin="0,8,0,24"/>
-            <customControl:NumericUpDown Height="32" Width="54" MinValue="0" MaxValue="100" Increment="1" Value="3" />
+                <customControl:NumericUpDown Height="32" Width="54" MinValue="0" MaxValue="100" Increment="1" Value="3" />
+            </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom" Background="Red">
             <TextBlock  Text="Bottom" />

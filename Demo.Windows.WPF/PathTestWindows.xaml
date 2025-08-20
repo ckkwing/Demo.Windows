@@ -101,7 +101,7 @@
                 </EventTrigger>
             </Path.Triggers>
         </Path>
-        <!--第五个未圆 有进度-->
+        <!--第五个圆 有进度-->
         <Grid Width="100" Height="100">
             <Ellipse Stroke="#EEE" StrokeThickness="10"/>
             <Ellipse Stroke="DodgerBlue" StrokeThickness="10" StrokeEndLineCap="Round" StrokeStartLineCap="Round" StrokeDashCap="Round">
@@ -121,7 +121,7 @@
                     </EventTrigger>
                 </Ellipse.Triggers>-->
                 <Ellipse.RenderTransform>
-                    <RotateTransform x:Name="rotateTransform1" CenterX="50" CenterY="50" Angle="90"/>
+                    <RotateTransform x:Name="rotateTransform1" CenterX="50" CenterY="50" Angle="180"/>
                 </Ellipse.RenderTransform>
             </Ellipse>
         </Grid>
