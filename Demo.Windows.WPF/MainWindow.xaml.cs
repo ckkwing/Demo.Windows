@@ -240,7 +240,7 @@ namespace Demo.Windows.WPF
             Size pixelsSize = DpiHelper.DipToPixels(new Size(this.ActualWidth, this.ActualHeight), this);
             MessageBox.Show($"Pixels size of this window are width:{pixelsSize.Width}, height:{pixelsSize.Height}");
 
-            Size dipSize = new Size(1100, 650);
+            Size dipSize = new Size(1250, 700);
             pixelsSize = DpiHelper.DipToPixels(dipSize, this);
             MessageBox.Show($"Dip size:{dipSize.Width} * {dipSize.Height}, Pixels size:{pixelsSize.Width} * {pixelsSize.Height}");
             dipSize = DpiHelper.PixelsToDip(pixelsSize, this);
