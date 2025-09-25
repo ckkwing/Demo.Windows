@@ -246,6 +246,23 @@ namespace Demo.Windows.WPF
             dipSize = DpiHelper.PixelsToDip(pixelsSize, this);
         }
 
+        private void btnScreensTest_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            ScreenMonitor screenMonitor = new ScreenMonitor();
+            foreach (var keyPair in ScreenMonitor.GetMonitorPositions())
+            {
+                stringBuilder.AppendLine($"#DeviceName:{keyPair.Key}, #Position:{keyPair.Value}").AppendLine(Environment.NewLine);
+            }
+            stringBuilder.AppendLine("########################################");
+            foreach (var keyPair in ScreenMonitor.GetMonitorPositionsRelativeToPrimary())
+            {
+                stringBuilder.AppendLine($"#DeviceName:{keyPair.Key}, #Position:{keyPair.Value}").AppendLine(Environment.NewLine);
+            }
+
+            MessageBox.Show(stringBuilder.ToString());
+        }
+
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(params string[] properties)
@@ -259,6 +276,7 @@ namespace Demo.Windows.WPF
                 }
             }
         }
+
 
 
         #endregion
