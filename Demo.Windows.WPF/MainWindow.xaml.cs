@@ -263,6 +263,12 @@ namespace Demo.Windows.WPF
             MessageBox.Show(stringBuilder.ToString());
         }
 
+        private void btnAssemblyInfoTest_Click(object sender, RoutedEventArgs e)
+        {
+            AssemblyInfoWindow assemblyInfoWindow = new AssemblyInfoWindow();
+            assemblyInfoWindow.ShowDialog();
+        }
+
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(params string[] properties)
@@ -276,6 +282,7 @@ namespace Demo.Windows.WPF
                 }
             }
         }
+
 
 
 

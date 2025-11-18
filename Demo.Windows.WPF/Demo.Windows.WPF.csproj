@@ -63,12 +63,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AssemblyInfoWindow.xaml.cs">
+      <DependentUpon>AssemblyInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PathTestWindows.xaml.cs">
       <DependentUpon>PathTestWindows.xaml</DependentUpon>
     </Compile>
     <Compile Include="ScrollViewerTestWindow.xaml.cs">
       <DependentUpon>ScrollViewerTestWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AssemblyInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GeneralStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

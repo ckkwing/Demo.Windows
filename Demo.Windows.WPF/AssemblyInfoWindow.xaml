@@ -1,0 +1,18 @@
+﻿<customControl:ChromeBaseWindow x:Class="Demo.Windows.WPF.AssemblyInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:customControl="clr-namespace:Theme.CustomControl;assembly=Theme"
+        xmlns:local="clr-namespace:Demo.Windows.WPF"
+        mc:Ignorable="d" Background="{DynamicResource BRUSH_BLACK}"
+        Title="AssemblyInfoWindow" Height="450" Width="800">
+    <StackPanel>
+      <StackPanel Orientation="Horizontal" Margin="10">
+        <TextBlock Text="Assembly Path: " FontWeight="Bold"/>
+            <TextBox x:Name="txtAssemblyPath" Text="{Binding AssemblyPath}" Width="600" IsReadOnly="True" TextWrapping="Wrap"/>
+        </StackPanel>
+        <Button x:Name="btnCheck" Content="Check Info" Width="150" Margin="10" Click="btnCheck_Click"/>
+        <TextBlock x:Name="txtAssemblyInfo" Text="{Binding AssemblyInfo}" Margin="10" TextWrapping="Wrap"/>
+    </StackPanel>
+</customControl:ChromeBaseWindow>
