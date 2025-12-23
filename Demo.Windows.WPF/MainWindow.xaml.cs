@@ -286,8 +286,13 @@ namespace Demo.Windows.WPF
 
 
 
+
         #endregion
 
-
+        private void btnListBoxSelectionTest_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxSelectionTestWindow listBoxSelectionTestWindow = new ListBoxSelectionTestWindow();
+            listBoxSelectionTestWindow.ShowDialog();
+        }
     }
 }

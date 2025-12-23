@@ -38,6 +38,8 @@
             <Button x:Name="btnDPITest" Content="DPI Test" Click="btnDPITest_Click" />
             <Button x:Name="btnScreensTest" Content="Screens Test" Click="btnScreensTest_Click" />
             <Button x:Name="btnAssemblyInfoTest" Content="Assembly info test" Click="btnAssemblyInfoTest_Click" />
+            <Button x:Name="btnListBoxSelectionTest" Content="ListBox items selection Test" Click="btnListBoxSelectionTest_Click" />
+            <customControl:BaseButton Content="BaseButton Style Test" Background="Chartreuse" />
         </WrapPanel>
         <StackPanel Grid.Row="1" Margin="0,20,0,0">
             <Border BorderThickness="2" BorderBrush="White" Height="1" />

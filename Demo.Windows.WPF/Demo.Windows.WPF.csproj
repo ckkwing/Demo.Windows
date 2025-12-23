@@ -45,6 +45,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,6 +67,9 @@
     <Compile Include="AssemblyInfoWindow.xaml.cs">
       <DependentUpon>AssemblyInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListBoxSelectionTestWindow.xaml.cs">
+      <DependentUpon>ListBoxSelectionTestWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PathTestWindows.xaml.cs">
       <DependentUpon>PathTestWindows.xaml</DependentUpon>
     </Compile>
@@ -81,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ImageTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListBoxSelectionTestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
