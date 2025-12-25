@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Demo.Windows.WPF"
         xmlns:customControl="clr-namespace:Theme.CustomControl;assembly=Theme"
         mc:Ignorable="d" FunctionBar="{DynamicResource FunctionBarControl}"
+        xmlns:customMarkupExtensions="clr-namespace:Theme.MarkupExtensions;assembly=Theme"
         Title="MainWindow" Height="450" Width="800"
         Loaded="Window_Loaded" Background="#FF1F1F1F"  ResizeMode="CanResizeWithGrip">
     <customControl:ChromeBaseWindow.Resources>
@@ -44,6 +45,7 @@
         <StackPanel Grid.Row="1" Margin="0,20,0,0">
             <Border BorderThickness="2" BorderBrush="White" Height="1" />
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{customMarkupExtensions:DynamicStringResourceWithStringFormat ResourceKey=IDS_OK,Format={}{0}:}" />
                 <Button Content="HyperlinkButtonStyle" Style="{DynamicResource HyperlinkButtonStyle}" />
                 <customControl:AlphaNumericPasswordBoxWithToggle Style="{DynamicResource CommonPasswordBoxWithToggleStyle}"
                                    WaterText="Water text"
